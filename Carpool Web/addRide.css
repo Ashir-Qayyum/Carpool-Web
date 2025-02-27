@@ -1,0 +1,309 @@
+body{
+    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+   
+}
+
+.cont{
+    background: orange;
+    border: 2px solid black;
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    overflow-y: scroll;
+    
+}
+.hh {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    
+}
+
+.hh h1{
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-right: 2rem;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
+.c, .co{
+    margin: 0px 15%;
+}
+.inn{
+    margin: 0px auto;
+    margin-bottom: 7px;
+    width: 70vw;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid #ffb300;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 1rem;
+    outline: none; /* Removes the default outline on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+.inn:focus {
+    border-color: #17ec0f; /* New border color when focused */
+    box-shadow: 0 0 100px rgba(3, 255, 3, 0.7); 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+} 
+.innn1{
+    margin: 0px auto;
+    width: 70vw;
+    padding-left: 7px;
+    padding-right: 7px;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid #ffb300;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none; /* Removes the default outline on focus */
+}
+
+.c::after {
+    content: " *";
+    color: red;
+}
+.innn2{
+    margin: 0px auto;
+    margin-left: 14.5vw;
+    width: 9rem;
+    border-radius: 0.3rem;
+    margin-right: 0;
+    padding-left: 0.5rem;
+}
+.dsa{
+    width: 4rem;
+    height: 1.5rem;
+    background: green;
+    margin-right: 4px;
+    margin-left: auto;
+    border-radius: 0.3rem;
+    color: white;
+
+}
+.asd
+{
+    width: 3.5rem;
+    height: 1.5rem;
+    background: red;
+    margin-right: 14.5vw;
+    border-radius: 0.3rem;
+    color: white;
+
+}
+.rowconv{
+    display: flex;
+  flex-direction: row;
+}
+.rtdisp #rts{
+    
+    margin: 0px auto;
+    border-radius: 0.3rem;
+    padding: 0px 1rem;
+    margin-top: 0.5rem;
+    width: auto;
+    height: auto;
+    overflow: auto;
+    border: 2px solid black;
+    color: rgb(255, 255, 255);
+    max-width: 65vw;
+    max-height: 10vw;
+    
+    text-align: center;
+}
+img{
+    height: 20px;
+    background: none;
+    margin-bottom: 0;
+}
+.submitBtn{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+
+
+/* CHANGED THIS */
+#subb{
+    width: 200px;
+    height: auto;
+    border-radius: 0.6rem;
+    background-color: greenyellow;
+    color: black;
+    box-shadow: 0 0 100px rgba(3, 255, 3, 0.7); 
+    border: 2px solid black;
+}
+
+/* *******************THIS PART FROM IBTI******************** */
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .cont {
+      background-color: rgb(255, 255, 255);
+      color: rgb(0, 0, 0);
+      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+
+    }
+}
+
+.dark-mode .cont {
+    background-color: rgb(34, 33, 33);
+    color: white;
+}
+
+/* Mode button positioning */
+.modebtn{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+    
+}
+#togglebtn{
+    all: unset;
+    cursor: pointer;
+}
+
+
+/* *******************THIS PART FROM IBTI******************** */
+
+/* START OF CHANGES */
+.vehnamemodel {
+    display: flex;
+    flex-direction: row; /* Aligns the vehicle name and model on a single line */
+    align-items: flex-start; /* Aligns items to the start vertically */
+    width: 70vw;
+    max-width: 90%; /* Ensures the container doesn’t exceed the viewport width */
+    margin: 0 auto;
+    margin-bottom: 7px;
+    /* //padding: 0.5rem 0; */
+    position: relative;
+   /* // border:20px solid yellow; */
+}
+
+.justname,
+.justmodel {
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* Remove all margins for consistency */
+    flex: 1; /* Ensures equal width for both inputs */
+    min-width: 0; /* Prevents the flex items from growing too large */
+}
+
+.justname label,
+.justmodel label {
+    margin-bottom: 0px; /* Adds space between labels and inputs */
+    font-size: 1rem; /* Ensures consistent font size */
+    font-weight: bold; /* Ensures consistent font weight */
+}
+
+.justmodel label::after {
+    /* //content: " (optional)"; */
+    font-size: 0.8rem; /* Smaller font size for "(optional)" */
+    color: grey; /* Optional: Style "(optional)" differently if needed */
+}
+
+.innname {
+    width: calc(100% + 0px); /* Increase width to show full placeholder */
+    padding-left: 1rem;
+    margin-left: -10px;
+    border: 2px solid #ffb300;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    height: 1.5rem;
+}
+
+.innmodel {
+    width: calc(100% - 40px); /* Make it shorter */
+    padding-left: 1rem;
+    height: 2.5rem; /* Adjusted height for consistency */
+    border: 2px solid #ffb300;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-left: 2rem; /* Adjust this value to align with above fields */
+    margin-right: 0px;
+    height: 1.5rem;
+}
+
+.innname:focus,
+.innmodel:focus {
+    border-color: #17ec0f;
+    box-shadow: 0 0 100px rgba(3, 255, 3, 0.7);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.c2 {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start; /* Aligns items to the start vertically */
+    width: 100%; /* Ensure it takes full width for proper alignment */
+    margin-bottom: 0;
+}
+
+.justmodel {
+    margin-left: auto; /* Space between vehicle name and model */
+    margin-right: 0;
+}
+
+/* .innname {
+     Adjust this value to align with above fields
+} */
+
+.innmodel {
+    margin-left: 2rem; /* Adjust this value to align with above fields */
+    margin-right: 0px;
+}
+
+.labm{
+    margin-left: 3rem;
+    
+}
+.innname::placeholder,
+.innmodel::placeholder {
+    font-size: 16px; /* Match font size of input text */
+    color: #999; /* Light grey color for placeholder text */
+    font-family: 'Times New Roman'; /* Match font family of input text */
+}
+
+.innname:focus,
+.innmodel:focus {
+    border-color: #17ec0f;
+    box-shadow: 0 0 100px rgba(3, 255, 3, 0.7);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+
+
+
+/* END OF CHANGES *

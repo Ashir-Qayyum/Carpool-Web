@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool Web</title>
+    <link rel="stylesheet" href="yourhosting.css">
+</head>
+<body>
+    <div class="heading">
+        <h1 class="heading">YOUR HOSTING</h1>
+    
+        <button onclick="toggleDarkMode()" id="togglebtn">
+            <svg width="30" height="30" id="light-icon" style="display: none;">
+                <circle cx="15" cy="15" r="6" fill="currentColor" />
+                <line stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                <line id="ray" stroke="currentColor" stroke-width="2" stroke-linecap="round" x1="15" y1="1" x2="15" y2="4"></line>
+                <use href="#ray" transform="rotate(45 15 15)" />
+                <use href="#ray" transform="rotate(90 15 15)" />
+                <use href="#ray" transform="rotate(135 15 15)" />
+                <use href="#ray" transform="rotate(180 15 15)" />
+                <use href="#ray" transform="rotate(225 15 15)" />
+                <use href="#ray" transform="rotate(270 15 15)" />
+                <use href="#ray" transform="rotate(315 15 15)" />
+            </svg>
+            <svg width="30" height="30" id="dark-icon">
+                <path fill="currentColor" d="M23,5 A12 12 0 1 0 23,25 A12 12 0 0 1 23,5"/>
+            </svg>
+        </button>
+    </div>
+
+    <label class="lb">HOSTCODE:</label>
+    <div class="hst">
+        <input class="inp" id="hostcode" placeholder="Enter your Host code" autocomplete="off" readonly 
+        onfocus="this.removeAttribute('readonly');" type="number">
+        <button class="go" id="go">GO</button>
+    </div>
+
+    <div class="container" id="container">
+        <!-- Content will be injected here -->
+    </div>
+
+    <script src="yourhosting.js" type="module"></script>
+    
+
+</body>
+</html>

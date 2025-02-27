@@ -1,0 +1,199 @@
+/* Global styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+/* Dark mode styles */
+.dark-mode .profile-card {
+    background-color: rgba(128, 128, 128, 0.322); /* Gray color for dark mode */
+}
+
+/* Light mode styles */
+.profile-card {
+    background-color: rgb(91, 235, 168); /* Green color for light mode */
+}
+
+
+
+
+
+
+
+body {
+    font-family:'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-bottom: 0;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: rgb(255, 255, 255);
+        color: black;
+      transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+
+    }
+}
+
+.dark-mode {
+    background-color: rgb(34, 33, 33);
+    color: white;
+}
+
+/* Mode button positioning */
+.modebtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* Heading styling */
+.heading {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+    position: fixed;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.heading h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding-right: 1rem;
+}
+
+#togglebtn {
+    all: unset;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+/* Search bar container */
+.searchbar {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-self: center;      /* Centers vertically */
+    margin-top: 4rem;
+    padding: 1rem;
+    position: fixed;
+}
+
+/* Search bar input */
+.searchbar input[type=text] {
+    width: 100%; 
+    max-width: 600px; /* Limits the max width on larger screens */
+    height: 2rem;
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border: 2px solid #ffb300;
+    border-radius: 2rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding-left: 1rem;
+    outline: none; /* Removes the default outline on focus */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Search bar focus state */
+.searchbar input[type=text]:focus {
+    border-color: #17ec0f; /* New border color when focused */
+    box-shadow: 0 0 100px rgba(3, 255, 3, 0.7); 
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .heading h1 {
+        font-size: 1.5rem;
+    }
+    
+    .searchbar input[type=text] {
+        width: 90%; /* Adjusts width to fit smaller screens */
+    }
+
+    .grid-container {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 10px;
+    overflow-y: scroll;
+    border: 2px solid red;
+    margin-top: 9rem;
+    margin-bottom: 0;
+}
+
+.profile-card {
+    position: relative;
+    border: 1px solid #ddd;
+    padding: 10px;
+    /* //background-color: gray; */
+    border-radius: 5px;
+}
+
+.profile-card p {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.profile-card p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+
+
+.profile-card #ReqBtn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    /* //margin-left: 14rem; */
+}
+
+.profile-card #ReqBtn:hover {
+    background-color: #0056b3;
+}
+
+.route-text{
+    width: 16rem;
+    display: flex;
+    /* //flex-direction: row; */
+    align-items: center;
+    align-self: center;
+    justify-self: center;
+    margin: auto;
+    justify-content: center;
+    /* //border: 2px solid red; */
+    color: yellow;
+}
+
+
+.highlight {
+    background-color: yellow; /* Highlight color */
+    font-weight: bold; /* Optional: Makes the highlighted text bold */
+    color: red; /* Optional: Change text color for better visibility */
+}
+

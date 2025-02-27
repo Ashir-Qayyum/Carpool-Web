@@ -1,0 +1,271 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: auto;
+    height: 100vh;
+    background-color: rgb(136, 132, 150);
+    /* //padding-top: -15rem; */
+}
+
+h2 {
+    margin-bottom: 2rem;
+    align-self: center;
+    justify-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    color: #333;
+    font-size: 1rem;
+    margin-top: -2rem;
+}
+
+.container {
+    display: flex;
+    background-color: rgb(163, 45, 45);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40vw;
+    height: 55vh;
+    /* //border: 2px solid #ff4d4d; */
+    border-radius: 2.5rem;
+    /* //background-color: rgb(116, 98, 98); */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding-bottom: 0.75rem;
+}
+
+.choice {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    width: 18vw;
+    height: 5vh;
+    border: none;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login1 {
+    /* //background-color: #4CAF50; */
+    background-color: black;
+    color: white;
+    margin-right: -0.5rem;
+}
+
+.signup1 {
+    /* //background-color: #2196F3; */
+    background-color: white;
+    color: black;
+    /* //color: white; */
+    margin-left: -0.5rem;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90vw;
+    }
+
+    button {
+        width: 35vw;
+    }
+}
+
+
+h2 {
+    font-size: 5vw; /* Adjusts the font size based on the viewport width */
+    margin-bottom: 2rem;
+    color: #333;
+    text-align: center;
+    transition: font-size 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        font-size: 7vw; /* Slightly larger on smaller devices */
+    }
+}
+
+label{
+    font-size: 15px;
+}
+
+
+.r{
+    border: 2px solid red;
+    width: 80%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+.in{
+    border-radius: 8px;
+    padding-left: 1rem;
+    width: 13rem;
+    height: 1.25rem;
+    background-color: black;
+    color: white;
+}
+input.in:focus {
+    border-color: #555;
+    outline: none;
+}
+input.in:-webkit-autofill {
+    background-color: black !important;
+    color: white !important;
+    border: 1px solid #333 !important;
+}
+.ro{
+    margin-left: -10rem;
+    color: white;
+}
+.pa{
+    margin-left: -7.5rem;
+    margin-top: 1rem;
+    color: white;
+}
+
+#ch{
+    color: yellow;
+    margin-left: -6.5rem;
+    font-size: 11px;
+}
+
+.em{
+    margin-left: -8.5rem;
+    color: white;
+}
+.name{
+    margin-left: -6.5rem;
+    color: white;
+    margin-top: 0.5rem; 
+}
+.old{
+    margin-left: -7rem;
+    color: white;
+    margin-top: 0.5rem; 
+}
+
+.npa{
+    margin-left: -6.25rem;
+    color: white;
+    margin-top: 0.5rem; 
+}
+.cpa{
+    margin-left: -5rem;
+    color: white;
+    margin-top: 0.5rem; 
+}
+#back{
+    width: 4rem;
+    height: 1rem;
+    border-radius: 9px;
+    margin-top: 2rem;
+    margin-bottom: -1.75rem;
+    font-size: 13px;
+    /* //margin-right: -80%; */
+}
+#go{
+    width: 3rem;
+    height: 1.75rem;
+    border-radius: 9px;
+    background-color: green;
+    color: white;
+    border: 0.5px solid green;
+    margin-top: 1.5rem;
+    margin-bottom: -1.5rem;
+}
+
+.signup2{
+    color: white;
+    font-size: 11px;
+    margin-top: 4.25rem;
+    margin-bottom: -4.25rem;
+}
+
+.l{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    margin-top: -3rem;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+input#signfullName::placeholder {
+    font-size: 12px;
+    margin-left: 0;
+}
+.spa{
+    margin-left: -5.5rem;
+    color: white;
+    margin-top: 0.5rem; 
+}
+
+#sign{
+    width: 5rem;
+    height: 1.75rem;
+    border-radius: 9px;
+    background-color: green;
+    color: white;
+    border: 0.5px solid green;
+    margin-top: 1.25rem;
+    margin-bottom: -1.25rem;
+}
+
+#login3{
+    color: white;
+    font-size: 11px;
+    margin-top: 3rem;
+    margin-bottom: -3rem;
+}
+
+.s{
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    margin-top: -2.5rem;
+    color: rgba(255, 255, 255, 0.664);
+}
+
+#CHANGE{
+    height: 1.5rem;
+    font-size: 13px;
+    margin-top: 1rem;
+    width: 10rem;
+    background-color: blue;
+    color: white;
+}
+
+.chem{
+    margin-top: -1rem;
+}
+
+button {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}

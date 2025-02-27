@@ -1,0 +1,376 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling when modal is open */
+    position: relative;
+    background-color: #f4f4f4;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow: scroll;
+    padding-bottom: 5rem;
+    
+}
+
+h1 {
+    margin-bottom: 2rem;
+}
+
+.lb {
+    font-size: 13px;
+    color: black;
+    font-weight: 900;
+    margin-left: -7rem;
+    margin-top: 0.7rem;
+}
+
+
+
+.inp {
+    width: 12rem;
+    padding-left: 0.5rem;
+    transition: box-shadow 0.9s ease; /* Optional: Add transition for the glow effect */
+}
+
+.go {
+    height: 1.5rem;
+    margin-left: 5px;
+    padding: 0 10px;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.go:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+   /* // border: 1px solid red; */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.invalid-code {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+}
+
+.invalid-code h2 {
+    font-size: 1.5rem;
+}
+
+.invalid-code p {
+    font-size: 1rem;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .lb,
+.dark-mode .d,
+.dark-mode .btn {
+    color: #e0e0e0;
+}
+
+.dark-mode .go {
+    background-color: #333;
+}
+
+.dark-mode .go:hover {
+    background-color: #555;
+}
+
+
+
+#togglebtn {
+    all: unset;
+    cursor: pointer;
+}
+
+/* Light/Dark mode icon positioning */
+#light-icon {
+    display: none;
+}
+
+/* Add glow effect to the input field */
+.inp:focus {
+    outline: none;
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.9); /* Increased glow intensity */
+}
+
+/* Add the dark mode styles if needed */
+.dark-mode .inp:focus {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.9); /* Increased glow intensity */
+}
+
+
+.heading{
+    margin-bottom: 0.5rem;
+}
+
+
+
+.inp{
+    border-radius: 2.5rem;
+    padding-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hst{
+    margin-bottom: 1rem;
+}
+
+.sp{
+    margin-right: 5px;
+}
+
+#hstname{
+    margin-left: 13px;
+}
+
+.n{
+   /* // border: 2px solid green;
+    //width:18.5rem; */
+    height: 1rem;
+    padding: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 0.5rem;
+    
+}
+
+.separate{
+   /* // border: 2px solid red; */
+    width: 18.5rem;
+    height: 1rem;
+    padding: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    margin-top: 0.5rem;
+}
+
+.sep1{
+   /* // border: 2px solid black; */
+    width: 16rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+
+}
+.sep2{
+   /* // border: 2px solid blue; */
+    width: 14rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.wh{
+    background-color: green;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    height: 1.75rem;
+    width: 9.55rem;
+    font-size: 12.25px;
+    padding-left: 3.5px;
+    font-weight: 600;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+.wh:active{
+    background-color: lightgreen;
+    height: -1px;
+    width: -1px;
+}
+
+.r{
+    /* //border: 2px solid green; */
+    width: 14rem;
+    height: 3rem;
+    padding: auto;
+    padding-top: auto;
+    padding-bottom: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0.5rem auto 0.5rem auto;
+}
+.cncl{
+    background-color: red;
+    color: white;
+    margin-top: 2.5rem;
+    border-radius: 8px;
+    padding: 7px;
+    width: 8rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cnn{
+    margin-right: 1px;
+}
+
+h5{
+    font-size: 14px;
+    font-family: 'Arial Rounded MT Bold', sans-serif; /* Fallback to sans-serif */
+  font-weight: bold;
+}
+
+.w{
+    width: 18.75rem;
+    margin-top: 0.75rem;
+   /* // border: 1px solid red; */
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5); /* Black with opacity */
+    backdrop-filter: blur(5px); /* Blur the background */
+}
+
+/* Modal content */
+.modal-content {
+    background-color: #fff;
+    margin: 60% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    text-align: center;
+    align-self: center;
+}
+
+/* Modal buttons */
+.modal-buttons {
+    margin-top: 20px;
+}
+
+.modal-btn {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.modal-btn:hover {
+    background-color: #45a049;
+}
+
+.modal-btn.no {
+    background-color: #f44336;
+}
+
+.modal-btn.no:hover {
+    background-color: #e53935;
+}
+.m{
+    color: black
+}
+
+
+
+

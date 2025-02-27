@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN/SIGNUP</title>
+    <link rel="stylesheet" href="signup.css">
+
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "",
+        });
+    })();
+    </script>
+
+
+</head>
+<body>
+    <h2>WELCOME TO CARPOOL FOR FASTIANS</h2>
+    <div class="container">
+        <div class="choice">
+            <button id="login" class="login1" onclick="loadLoginForm()">LOGIN</button>
+            <button id="signup" class="signup1" onclick="loadSignup()">SIGNUP</button>
+        </div>
+    </div>
+
+    
+    <script src="signup.js" type="module"></script>
+    
+</body>
+</html>

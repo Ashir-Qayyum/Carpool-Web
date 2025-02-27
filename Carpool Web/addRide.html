@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carpool Web</title>
+    <link rel="stylesheet" href="addRide.css">
+</head>
+<body>
+    
+    <div class="cont">
+        <div class="hh">
+            <h1>HOST YOUR RIDE</h1>
+            <button onclick="toggleDarkMode()" id="togglebtn">
+                <svg width="30" height="30" id="light-icon">
+                    <circle cx="15" cy="15" r="6" fill="currentColor" />
+            
+                    <line
+                    id="ray"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    x1="15"
+                    y1="1"
+                    x2="15"
+                    y2="4"
+                    ></line>
+            
+                    <use href="#ray" transform="rotate(45 15 15)" />
+                    <use href="#ray" transform="rotate(90 15 15)" />
+                    <use href="#ray" transform="rotate(135 15 15)" />
+                    <use href="#ray" transform="rotate(180 15 15)" />
+                    <use href="#ray" transform="rotate(225 15 15)" />
+                    <use href="#ray" transform="rotate(270 15 15)" />
+                    <use href="#ray" transform="rotate(315 15 15)" />
+                </svg>
+                <svg width="30" height="30" id="dark-icon">
+                    <path
+                    fill="currentColor"
+                    d="
+                    M 23, 5
+                    A 12 12 0 1 0 23, 25
+                    A 12 12 0 0 1 23, 5"
+                    />
+                </svg>
+                </button>
+        </div>
+   
+    <label class="c">NU ID</label>
+    <input id="nu_id" class="inn" placeholder="e.g.22K-4504" type="text" length="8" required>
+    <label class="c">HOST NAME</label>
+    <input id="name" class="inn" placeholder="Enter your name" required>
+    <div class="vehnamemodel">
+        <div class="justname"> 
+        <label class="c2">VEHICLE</label>
+        
+        <input class="innname" list="carlist" id="vehicle" placeholder="Select a vehicle" required>
+        <datalist id="carlist">
+            <option value="Lancer">Lancer</option>
+            <option value="Margalla">Margalla</option>
+            <option value="Mehran">Mehran</option>
+            <option value="Cultus">Cultus</option>
+            <option value="Alto">Alto</option>
+            <option value="Swift">Swift</option>
+            <option value="City">City</option>
+            <option value="Accord">Accord</option>
+            <option value="Baleno">Baleno</option>
+            <option value="Santa Fe">Santa Fe</option>
+            <option value="Elantra">Elantra</option>
+            <option value="Sonata">Sonata</option>
+            <option value="Prius">Prius</option>
+            <option value="Vitz">Vitz</option>
+            <option value="Passo">Passo</option>
+            <option value="Hilux">Hilux</option>
+            <option value="Vigo">Vigo</option>
+            <option value="Fortuner">Fortuner</option>
+            <option value="Civic Reborn">Civic Reborn</option>
+            <option value="Vezel">Vezel</option>
+            <option value="Wagon R">Wagon R</option>
+            <option value="Jimny">Jimny</option>
+            <option value="Cuore">Cuore</option>
+            <option value="Mira">Mira</option>
+            <option value="Move">Dahistu Move</option>
+            <option value="Pajero">Pajero</option>
+            <option value="Land Cruiser">Land Cruiser</option>
+            <option value="Defender">Defender</option>
+            <option value="CD70">CD70</option>
+            <option value="Honda 125">Honda 125</option>
+            <option value="Suzuki 150">Suzuki 150</option>
+            <option value="Suzuki 110">Suzuki 110</option>
+        </datalist>
+        </div>
+    
+    
+        <div class="justmodel">
+        <label class="c2 labm">Model</label>
+        <input class="innmodel" id="model" type="number" min="1975" max="2024" placeholder="e.g.2010" id="model" required>
+        </div>
+        </div>
+    
+        <div class="vehnamemodel">
+            <div class="justname"> 
+            <label class="c2">NO. PLATE</label>
+            
+            <input class="innname" id="plate" placeholder="e.g.XYZ-000" required>
+            
+            </div>
+        
+        
+            <div class="justmodel">
+            <label class="c2 labm">COLOR</label>
+            <input class="innmodel" list="carcolor" id="colour" placeholder="Color" required>
+            <datalist id="carcolor">
+                <option value="White">White</option>
+                <option value="Black">Black</option>
+                <option value="Silver">Silver</option>
+                <option value="Red">Red</option>
+                <option value="Blue">Blue</option>
+                <option value="Green">Green</option>
+                <option value="Yellow">Yellow</option>
+                <option value="Gray">Gray</option>
+                <option value="Brown">Brown</option>
+                <option value="Beige">Beige</option>
+                <option value="Orange">Orange</option>
+                <option value="Purple">Purple</option>
+                <option value="Pink">Pink</option>
+                <option value="Gold">Gold</option>
+                <option value="Maroon">Maroon</option>
+            </datalist>
+            </div>
+            </div>
+
+    <label class="c">Seats Available</label>
+    <input class="inn" type="number" min="1" max="4" id="seats" required>
+    <label class="c">Departure</label>
+    <input class="inn" type="datetime-local" id="waqt" required>
+    <label class="c">FAIR</label>
+    <input class="inn" type="number" min="0" max="500" id="fair" placeholder="Please lowest price you can offer" required>
+    <label class="c">YOUR ROUTE</label>
+    <div class="rowconv"> 
+    <input list="routes" class="innn2" id="route" placeholder="----Select Route----" required>
+        <datalist id="routes">
+        
+
+        <option value="Fast NU">Fast NU</option>
+        <option value="Liyyari">Liyyari</option>
+        <option value="NED">NED</option>
+        <option value="KU">KU</option>
+        <option value="Masumiyat">Masumiyat</option>
+        <option value="Lawyer's Colony">Lawyer's Colony</option>
+        <option value="Shanzil Appartment">Shanzil Appartment</option>
+        <option value="Tank More">Tank More</option>
+
+        <option value="Sakhi Hasan">Sakhi Hasan</option>
+        <option value="Suchal">Suchal</option>
+         <option value="Furniture Markit">Furniture Markit</option>
+        <option value="Memon Hospital">Memon Hospital</option>
+        <option value="Mosmiyat">Mosmiyat</option>
+        <option value="Checkpost 5">Checkpost 5</option>
+        <option value="Checkpost 6">Checkpost 6</option>
+        <option value="Security Printing Pres">Security Printing Pres</option>
+        <option value="Qalandrabad">Qalandrabad</option>
+        <option value="Saadabad">Saadabad</option>
+        <option value="PSO Pump near KU">PSO Pump near KU</option>
+        <option value="Mosamiyat">Mosamiyat</option>
+        <option value="Comander CNG">Comander CNG</option>
+        <option value="G-10 Gull House">G-10 Gull House</option>
+      
+        <option value="Fariya Chowke">Fariya Chowke</option>
+        <option value="Malik Society">Malik Society</option>
+        <option value="KDA">KDA</option>
+        <option value="Quita Town">Quita Town</option>
+        <option value="Sumaira Flat">Sumaira Flat</option>
+        <option value="Alazhar">Alazhar</option>
+        <option value="Capital Society">Capital Society</option>
+        <option value="Tulip Tower">Tulip Tower</option>
+        <option value="Gulshan Humair">Gulshan Humair</option>
+        <option value="5no Check post">5no Check post</option>
+        <option value="6 no Checkpost">6 no Checkpost</option>
+        <option value="Security Printing">Security Printing</option>
+        <option value="Dow University">Dow University</option>
+        <option value="Rizvia">Rizvia</option>
+        <option value="Al-Hira">Al-Hira</option>
+        <option value="Saima Flat">Saima Flat</option>
+        <option value="Sadi Town">Sadi Town</option>
+        <option value="Falcon">Falcon</option>
+        <option value="PCSIR">PCSIR</option>
+        <option value="Madras Chowke">Madras Chowke</option>
+        <option value="Darul Sehat">Darul Sehat</option>
+        <option value="Rado">Rado</option>
+        <option value="JDC">JDC</option>
+        <option value="Lala Zar Nipa">Lala Zar Nipa</option>
+        <option value="Safari Park">Safari Park</option>
+        <option value="Samama">Samama</option>
+        <option value="Continental">Continental</option>
+        <option value="Kesc">Kesc</option>
+        <option value="Johar Chowrangi">Johar Chowrangi</option>
+        <option value="Perfume Chowke">Perfume Chowke</option>
+        <option value="Hill Top">Hill Top</option>
+        <option value="Johar More">Johar More</option>
+        <option value="Javed Nihari">Javed Nihari</option>
+        <option value="Bhaijan Chowke">Bhaijan Chowke</option>
+        <option value="Mukka Choke">Mukka Choke</option>
+        <option value="13D 8-1/2">13D 8-1/2</option>
+        <option value="Rab Medical">Rab Medical</option>
+        <option value="Orangi Town # 5">Orangi Town # 5</option>
+        <option value="Abdullah College">Abdullah College</option>
+        <option value="Asghar Ali Shah">Asghar Ali Shah</option>
+        <option value="Katti Pahari">Katti Pahari</option>
+        <option value="KDA Chowrangi">KDA Chowrangi</option>
+        <option value="Bin Hashim">Bin Hashim</option>
+        <option value="Kazimabad">Kazimabad</option>
+        <option value="Tank Chowke">Tank Chowke</option>
+        <option value="Model More">Model More</option>
+        <option value="Model Colony">Model Colony</option>
+        <option value="Baraf Khana to Kala board">Baraf Khana to Kala board</option>
+        <option value="7 no Nazimabad">7 no Nazimabad</option>
+        <option value="Abbasi Hp">Abbasi Hp</option>
+        <option value="Khilafat Chowke">Khilafat Chowke</option>
+        <option value="Board Office">Board Office</option>
+        <option value="Mousa Colony">Mousa Colony</option>
+        <option value="Meena Bazar">Meena Bazar</option>
+        <option value="Usman Memorial">Usman Memorial</option>
+        <option value="Ayesha Manzil">Ayesha Manzil</option>
+        <option value="Gulshan e Shameem">Gulshan e Shameem</option>
+        <option value="Karimabad">Karimabad</option>
+        <option value="Hayderi Supper Mart">Hayderi Supper Mart</option>
+        <option value="Ziauddin">Ziauddin</option>
+        <option value="Ayesha Manzil More">Ayesha Manzil More</option>
+        <option value="Naseer abad">Naseer abad</option>
+        <option value="Red House">Red House</option>
+        <option value="Al Habib">Al Habib</option>
+        <option value="Cafe 2Days">Cafe 2Days</option>
+        <option value="Shafeeq More">Shafeeq More</option>
+        <option value="Al Noor">Al Noor</option>
+        <option value="Edhi Center">Edhi Center</option>
+        <option value="Nusrat Bhutto">Nusrat Bhutto</option>
+        <option value="CNG Pump">CNG Pump</option>
+        <option value="Shadman 1">Shadman 1</option>
+        <option value="Shadman 2">Shadman 2</option>
+        <option value="Namak Bank">Namak Bank</option>
+        <option value="Masjid Usman Ghani">Masjid Usman Ghani</option>
+        <option value="Mochi gali">Mochi gali</option>
+        <option value="ShipOwner">ShipOwner</option>
+        <option value="Lady Bird">Lady Bird</option>
+        <option value="Mateen Food">Mateen Food</option>
+        <option value="Dental College">Dental College</option>
+        <option value="Niaz Manzil">Niaz Manzil</option>
+        <option value="Green House">Green House</option>
+        <option value="2k Stop">2k Stop</option>
+        <option value="Donisal">Donisal</option>
+        <option value="Landikotal">Landikotal</option>
+        <option value="Dental">Dental</option>
+        <option value="Tahir Villas">Tahir Villas</option>
+        <option value="Shadab Masjid">Shadab Masjid</option>
+        <option value="Gulberg Thana">Gulberg Thana</option>
+        <option value="Anda More">Anda More</option>
+        <option value="Haider Food">Haider Food</option>
+        <option value="DC Office">DC Office</option>
+        <option value="Peoples Chowrangi">Peoples Chowrangi</option>
+        <option value="Kaif.e.Piyala">Kaif.e.Piyala</option>
+        <option value="Gulberg">Gulberg</option>
+        <option value="Raheem Hospital">Raheem Hospital</option>
+        <option value="Water pump More">Water pump More</option>
+        <option value="Caltex Petrolium">Caltex Petrolium</option>
+        <option value="Suhrab Goth">Suhrab Goth</option>
+        <option value="Ajmair Nagri">Ajmair Nagri</option>
+        <option value="Bombay Bakery">Bombay Bakery</option>
+        <option value="Oxford School">Oxford School</option>
+        <option value="Bara Dari">Bara Dari</option>
+        <option value="Babul Islam">Babul Islam</option>
+        <option value="Disco More">Disco More</option>
+        <option value="Qalandaria Chowke">Qalandaria Chowke</option>
+        <option value="KIHD hospital">KIHD hospital</option>
+        <option value="Fazal Mill">Fazal Mill</option>
+        <option value="Centrum">Centrum</option>
+        <option value="Dolmin Mall">Dolmin Mall</option>
+        <option value="5 Star">5 Star</option>
+        <option value="Farooq.e.Azam">Farooq.e.Azam</option>
+        <option value="Lucky 1">Lucky 1</option>
+        <option value="Moti Mahal">Moti Mahal</option>
+        <option value="Gulshan Dhaka">Gulshan Dhaka</option>
+        <option value="4K Stop">4K Stop</option>
+        <option value="2 Minute">2 Minute</option>
+        <option value="Power House">Power House</option>
+        <option value="Saleem Center">Saleem Center</option>
+        <option value="UP-More">UP-More</option>
+        <option value="Nagan (Dahli Hall)">Nagan (Dahli Hall)</option>
+        <option value="Disco Bakery">Disco Bakery</option>
+        <option value="Rimjim Hall">Rimjim Hall</option>
+        <option value="Maymar Gate">Maymar Gate</option>
+        <option value="Jamali Pull">Jamali Pull</option>
+        <option value="Al Asif">Al Asif</option>
+        <option value="Abbas Town">Abbas Town</option>
+        <option value="Paradise Bakery">Paradise Bakery</option>
+        <option value="Maskan">Maskan</option>
+        <option value="Kamran Chowrangi">Kamran Chowrangi</option>
+        <option value="Sardar CNG">Sardar CNG</option>
+        <option value="Munawar Chowrangi">Munawar Chowrangi</option>
+        <option value="Rabia City">Rabia City</option>
+        <option value="Pahalwan Goath">Pahalwan Goath</option>
+        <option value="Sindh Baloch">Sindh Baloch</option>
+        <option value="Baithak Merriage Lawn">Baithak Merriage Lawn</option>
+        <option value="Nawazsharif Scheem">Nawazsharif Scheem</option>
+        <option value="Bismillah Tower(PIA)">Bismillah Tower(PIA)</option>
+        <option value="Khatm-e-Nabvot Chowke">Khatm-e-Nabvot Chowke</option>
+        <option value="Kaneez Fatima">Kaneez Fatima</option>
+        <option value="G3 Stop">G3 Stop</option>
+        <option value="Suchal Goath">Suchal Goath</option>
+        <option value="Chapal">Chapal</option>
+        <option value="Memon Hp">Memon Hp</option>
+        <option value="Gull Estate">Gull Estate</option>
+        <option value="Safoora">Safoora</option>
+        <option value="Naz Petrol Pump">Naz Petrol Pump</option>
+        <option value="Esa Nagri">Esa Nagri</option>
+        <option value="Mashriq Centre">Mashriq Centre</option>
+        <option value="Stadium">Stadium</option>
+        <option value="Dalmia">Dalmia</option>
+        <option value="Millennium">Millennium</option>
+        <option value="Drigh Road">Drigh Road</option>
+        <option value="Matka Stop">Matka Stop</option>
+        <option value="Ala Din Park">Ala Din Park</option>
+        <option value="Lal Flat">Lal Flat</option>
+        <option value="Lasania Restaurant">Lasania Restaurant</option>
+        <option value="Shah Faisal Shama Shopping Center">Shah Faisal Shama Shopping Center</option>
+        <option value="Shah Faisal No. 2">Shah Faisal No. 2</option>
+        <option value="Shah Faisal No. 3">Shah Faisal No. 3</option>
+        <option value="Kalma Chock">Kalma Chock</option>
+        <option value="Azeem Pora">Azeem Pora</option>
+        <option value="Millat Town">Millat Town</option>
+        <option value="Malir 15">Malir 15</option>
+        <option value="Ram Sawami">Ram Sawami</option>
+        <option value="Garden Zoo">Garden Zoo</option>
+        <option value="Ali Bhai">Ali Bhai</option>
+        <option value="Garden Jamat Khana">Garden Jamat Khana</option>
+        <option value="Fatimia Blood Bank">Fatimia Blood Bank</option>
+        <option value="Khurasan">Khurasan</option>
+        <option value="Numaish">Numaish</option>
+        <option value="Khudadad Colony">Khudadad Colony</option>
+        <option value="Noorani Kabab">Noorani Kabab</option>
+        <option value="Shahra-e-Quideen">Shahra-e-Quideen</option>
+        <option value="Nursery">Nursery</option>
+        <option value="NHS 4 Shahra-e-Faisal">NHS 4 Shahra-e-Faisal</option>
+        <option value="Nata Khan">Nata Khan</option>
+        <option value="Police Head Quarter">Police Head Quarter</option>
+        <option value="Garden">Garden</option>
+        <option value="Uncle Sariya">Uncle Sariya</option>
+        <option value="Mobile Market">Mobile Market</option>
+        <option value="Naz Plaza">Naz Plaza</option>
+        <option value="Islamia College">Islamia College</option>
+        <option value="New Town Chandni">New Town Chandni</option>
+        <option value="Chowk">Chowk</option>
+        <option value="Aghaz Super Market">Aghaz Super Market</option>
+        <option value="Teen Talwar">Teen Talwar</option>
+        <option value="Bachaa Party">Bachaa Party</option>
+        <option value="Punjab Chowrangi">Punjab Chowrangi</option>
+        <option value="DHA Phase - I (Nadra Office)">DHA Phase - I (Nadra Office)</option>
+        <option value="Akhtar Colony">Akhtar Colony</option>
+        <option value="DHA Phase-II KFC">DHA Phase-II KFC</option>
+        <option value="Qayyumabad">Qayyumabad</option>
+        <option value="Korangi Crossing">Korangi Crossing</option>
+        <option value="Nasir Jump">Nasir Jump</option>
+        <option value="Korangi No. 2">Korangi No. 2</option>
+        <option value="Korangi No. 5">Korangi No. 5</option>
+        <option value="Landhi No. 4">Landhi No. 4</option>
+        <option value="Landhi 89">Landhi 89</option>
+        <option value="Dawood Chowrangi">Dawood Chowrangi</option>
+        <option value="Boat Basin">Boat Basin</option>
+        <option value="Bilawal Chowrangi">Bilawal Chowrangi</option>
+        <option value="26 Street">26 Street</option>
+        <option value="Badar Commercial">Badar Commercial</option>
+        <option value="Khayaban-e-Sehar">Khayaban-e-Sehar</option>
+        <option value="Nexer College">Nexer College</option>
+        <option value="Khayaban-e-Shahbaz">Khayaban-e-Shahbaz</option>
+        <option value="Singer Chowrangi">Singer Chowrangi</option>
+        <option value="KPT Bridge">KPT Bridge</option>
+        <option value="Iqra University">Iqra University</option>
+        <option value="Manzoor Colony">Manzoor Colony</option>
+        <option value="PAF Chapter">PAF Chapter</option>
+        <option value="Jahangirabad">Jahangirabad</option>
+        <option value="Golimar Chowrangi">Golimar Chowrangi</option>
+        <option value="Liaquatabad">Liaquatabad</option>
+        <option value="Ghareebabad">Ghareebabad</option>
+        <option value="Baloch Hotel">Baloch Hotel</option>
+        <option value="Karsaz">Karsaz</option>
+        <option value="Tower">Tower</option>
+        <option value="Jang Press">Jang Press</option>
+        <option value="Sindh Secretariat">Sindh Secretariat</option>
+        <option value="Saddar">Saddar</option>
+        <option value="Lucky Star">Lucky Star</option>
+        <option value="FTC">FTC</option>
+        <option value="Shahrah-e-Faisal">Shahrah-e-Faisal</option>
+        <option value="Hassan Square">Hassan Square</option>
+        <option value="Mumtaz Manzil">Mumtaz Manzil</option>
+        <option value="Bait-Ul-Mukarram">Bait-Ul-Mukarram</option>
+        <option value="Urdu Science College">Urdu Science College</option>
+        <option value="Aziz Bhatti Park">Aziz Bhatti Park</option>
+        <option value="Bilawal House">Bilawal House</option>
+        <option value="Hyper Star">Hyper Star</option>
+        <option value="Kh. Mujahid">Kh. Mujahid</option>
+        <option value="Saba Avenue">Saba Avenue</option>
+        <option value="Kh. Bukhari">Kh. Bukhari</option>
+        <option value="Kh. Ittehad">Kh. Ittehad</option>
+        <option value="KFC Phase-II">KFC Phase-II</option>
+        <option value="Forum Shopping Mall">Forum Shopping Mall</option>
+        <option value="ZamZama">ZamZama</option>
+        <option value="Gizri">Gizri</option>
+        <option value="Phase-IV">Phase-IV</option>
+        <option value="Phase-Il">Phase-Il</option>
+        <option value="Phase-II KFC">Phase-II KFC</option>
+        <option value="Sharfabad">Sharfabad</option>
+        <option value="Bahadurabad">Bahadurabad</option>
+        <option value="Dhoraji">Dhoraji</option>
+        <option value="M. Ali Society">M. Ali Society</option>
+        <option value="Wireless Gate">Wireless Gate</option>
+        <option value="Race Course">Race Course</option>
+        <option value="Cant Station">Cant Station</option>
+        <option value="Askari II">Askari II</option>
+        <option value="Askari III">Askari III</option>
+        <option value="Kala Pul">Kala Pul</option>
+        <option value="CSD">CSD</option>
+        <option value="Colony Gate">Colony Gate</option>
+        <option value="Star Gate">Star Gate</option>
+        <option value="Jail Road">Jail Road</option>
+        <option value="Kashmir Road">Kashmir Road</option>
+        <option value="Sir Syed Road">Sir Syed Road</option>
+        <option value="Khalid Bin Waleed Road">Khalid Bin Waleed Road</option>
+        <option value="Tariq Road">Tariq Road</option>
+        <option value="Tipu Sultan Road">Tipu Sultan Road</option>
+        <option value="Clifton">Clifton</option>
+        <option value="Stadium Road">Stadium Road</option>
+        <option value="Natha Khan">Natha Khan</option>
+        <option value="DHA Phase-">DHA</option>
+        <option value="Gulshan-e-Iqbal Block-">Gulshan-e-Iqbal Block-</option>
+        <option value="Gulistan-e-Johar Block-">Gulistan-e-Johar Block-</option>
+        <option value="Nazimabad">Nazimabad</option>
+        <option value="North Nazimabad Block-">North Nazimabad Block-</option>
+        <option value="PECHS">PECHS</option>
+        <option value="Korangi No.">Korangi No.</option>
+        <option value="Malir City">Malir City</option>
+        <option value="Malir Cantt">Malir Cantt</option>
+        <option value="Malir Halt">Malir Halt</option>
+        <option value="Malir Nadi">Malir Nadi</option>
+        <option value="Malir District">Malir District</option>
+        <option value="Shah Faisal Town">Shah Faisal Town</option>
+        <option value="Surjani Town">Surjani Town</option>
+        <option value="Orangi Town">Orangi Town</option>
+        <option value="Site Area">Site Area</option>
+        <option value="North Karachi">North Karachi</option>
+        <option value="Landhi">Landhi</option>
+        <option value="F.B. Area">F.B. Area</option>
+        <option value="Buffer Zone">Buffer Zone</option>
+        <option value="KDA Scheme 1">KDA Scheme 1</option>
+        <option value="Garden East">Garden East</option>
+        <option value="Gulshan-e-Maymar">Gulshan-e-Maymar</option>
+        <option value="Saadi Town">Saadi Town</option>
+        <option value="Korangi Industrial Area">Korangi Industrial Area</option>
+        <option value="Jamshed Quarters">Jamshed Quarters</option>
+        <option value="Mehmoodabad">Mehmoodabad</option>
+        <option value="Defence View">Defence View</option>
+        <option value="Shershah">Shershah</option>
+        <option value="Hawksbay">Hawksbay</option>
+        <option value="Gadap Town">Gadap Town</option>
+        <option value="Korangi Crossing">Korangi Crossing</option>
+        <option value="Mochko">Mochko</option>
+        <option value="Saddar Town">Saddar Town</option>
+        <option value="Kharadar">Kharadar</option>
+        <option value="Ranchore Line">Ranchore Line</option>
+        <option value="Paposh Nagar">Paposh Nagar</option>
+        <option value="Golimar">Golimar</option>
+        <option value="Lines Area">Lines Area</option>
+        <option value="Gulshan-e-Hadeed">Gulshan-e-Hadeed</option>
+        <option value="Steel Town">Steel Town</option>
+        <option value="Sher Shah Colony">Sher Shah Colony</option>
+        <option value="Lalazar">Lalazar</option>
+        <option value="KDA Scheme 33">KDA Scheme 33</option>
+        <option value="Abul Hassan Isphahani Road">Abul Hassan Isphahani Road</option>
+        <option value="Numaish Chowrangi">Numaish Chowrangi</option>
+        <option value="Water Pump">Water Pump</option>
+        <option value="Nagan Chowrangi">Nagan Chowrangi</option>
+        <option value="Gulzar-e-Hijri">Gulzar-e-Hijri</option>
+        <option value="Sadar Cantt">Sadar Cantt</option>
+        <option value="Cantt Bazaar">Cantt Bazaar</option>
+        <option value="Pakistan Chowk">Pakistan Chowk</option>
+        <option value="Light House">Light House</option>
+        <option value="Jamshed Town">Jamshed Town</option>
+        <option value="Azam Basti">Azam Basti</option>
+        <option value="Jinnah International Airport">Jinnah International Airport</option>
+        <option value="PIB Colony">PIB Colony</option>
+        <option value="Old Sabzi Mandi">Old Sabzi Mandi</option>
+        <option value="Guru Mandir">Guru Mandir</option>
+        <option value="Alamgir Road">Alamgir Road</option>
+        <option value="M.A. Jinnah Road">M.A. Jinnah Road</option>
+        <option value="Soldier Bazaar">Soldier Bazaar</option>
+        <option value="Memon Goth">Memon Goth</option>
+        <option value="Saeedabad">Saeedabad</option>
+        <option value="Baldia Town">Baldia Town</option>
+        <option value="Ittehad Town">Ittehad Town</option>
+        <option value="Gabol Town">Gabol Town</option>
+        <option value="Khawaja Ajmeer Colony">Khawaja Ajmeer Colony</option>
+        <option value="Old City Area">Old City Area</option>
+        <option value="Rehmanabad">Rehmanabad</option>
+        <option value="Green Town">Green Town</option>
+        <option value="Lyari Town">Lyari Town</option>
+        <option value="Agra Taj Colony">Agra Taj Colony</option>
+        <option value="Khadda Market">Khadda Market</option>
+        <option value="Sea View">Sea View</option>
+        <option value="Cantt Station">Cantt Station</option>
+        <option value="Shireen Jinnah Colony">Shireen Jinnah Colony</option>
+        <option value="PIDC">PIDC</option>
+        <option value="Civil Lines">Civil Lines</option>
+        <option value="Gulberg Town">Gulberg Town</option>
+        <option value="New Karachi">New Karachi</option>
+        <option value="Chapal Sun City">Chapal Sun City</option>
+        <option value="Ahsanabad">Ahsanabad</option>
+        <option value="Mominabad">Mominabad</option>
+        <option value="Shadman Town">Shadman Town</option>
+        <option value="Yaseenabad">Yaseenabad</option>
+        <option value="Johar Complex">Johar Complex</option>
+        <option value="Navy Housing Scheme">Navy Housing Scheme</option>
+        <option value="P&T Colony">P&T Colony</option>
+        <option value="Karachi University">Karachi University</option>
+        <option value="Agha Khan University Hospital">Agha Khan University Hospital</option>
+        <option value="Pakistan Employees Cooperative Housing Society (PECHS)">Pakistan Employees Cooperative Housing Society (PECHS)</option>
+        <option value="Seaview Apartments">Seaview Apartments</option>
+        <option value="Saima Arabian Villas">Saima Arabian Villas</option>
+        <option value="Hill Park">Hill Park</option>
+        <option value="Azizabad">Azizabad</option>
+        <option value="Federal B Area">Federal B Area</option>
+        <option value="Naya Nazimabad">Naya Nazimabad</option>
+        <option value="Mehmoodabad">Mehmoodabad</option>
+        <option value="Karachi Cantt">Karachi Cantt</option>
+        <option value="Cantonment">Cantonment</option>
+        <option value="Punjab Colony">Punjab Colony</option>
+        <option value="Islamabad Colony">Islamabad Colony</option>
+        <option value="Jamshed Road">Jamshed Road</option>
+        <option value="Azam Town">Azam Town</option>
+        <option value="Shirin Jinnah Colony">Shirin Jinnah Colony</option>
+        <option value="Rehri Goth">Rehri Goth</option>
+        <option value="Bhittai Colony">Bhittai Colony</option>
+        <option value="National Stadium">National Stadium</option>
+        <option value="Metroville">Metroville</option>
+        <option value="Pir Ilahi Buksh Colony">Pir Ilahi Buksh Colony</option>
+        <option value="Gharibabad">Gharibabad</option>
+        <option value="KDA Officers Society">KDA Officers Society</option>
+        <option value="Gulbahar">Gulbahar</option>
+        <option value="Rizvia Society">Rizvia Society</option>
+        <option value="City Railway Colony">City Railway Colony</option>
+        <option value="P.I.B. Colony">P.I.B. Colony</option>
+        <option value="Akbar Road">Akbar Road</option>
+        <option value="Civil Hospital">Civil Hospital</option>
+        <option value="Lyari Expressway">Lyari Expressway</option>
+        <option value="Karsaz Road">Karsaz Road</option>
+        <option value="Nazimabad">Nazimabad</option>
+        <option value="Lasbella">Lasbella</option>
+        <option value="Ancholi">Ancholi</option>
+        <option value="Bahria Town Karachi">Bahria Town Karachi</option>
+        <option value="Creek Vista">Creek Vista</option>
+        <option value="Taiser Town">Taiser Town</option>
+        <option value="Gulistan-e-Jauhar">Gulistan-e-Jauhar</option>
+        <option value="Falaknaz Dreams">Falaknaz Dreams</option>
+        <option value="Super Highway">Super Highway</option>
+        <option value="Port Qasim">Port Qasim</option>
+        <option value="Surjani Town">Surjani Town</option>
+        <option value="New Sabzi Mandi">New Sabzi Mandi</option>
+        <option value="Cattle Colony">Cattle Colony</option>
+        <option value="Kala Board">Kala Board</option>
+        <option value="Patel Para">Patel Para</option>
+        <option value="Airport">Airport</option>
+        <option value="Steel Town">Steel Town</option>
+        <option value="Industrial Area">Industrial Area</option>
+        <option value="Dow Medical">Dow Medical</option>
+    </datalist>
+    <button  class="dsa" id="rtsub">ADD</button> 
+    <button class="asd" id="rtdel">DEL</button>
+</div>
+<!-- <textarea class="inn" rows="4" cols="2">hello</textarea>-->
+<div class="rtdisp" id="qwe"><h5 id="rts"></h5></div>
+<label class="c">CONTACT NO.</label>
+<input class="inn" type="number"  placeholder="03XXXXXXXXX" id="phone" required>
+<label class="c">WhatsApp<img src="whatsappimg.png"></label>
+<input class="inn" type="number" placeholder="03XXXXXXXXX" id="whats" required>
+<div class="submitBtn">
+    <button id="subb">SUBMIT</button>
+</div>
+
+    </div>
+
+    
+
+
+    <script src="addRide.js"></script>
+    <script src="firebaseDatabase.js" type="module"></script>
+
+    
+</body>
+
+</html>

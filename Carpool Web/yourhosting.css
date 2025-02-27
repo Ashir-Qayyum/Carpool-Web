@@ -1,0 +1,443 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling when modal is open */
+    position: relative;
+    background-color: #f4f4f4;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    overflow-y: scroll;
+    padding-bottom: 5rem;
+}
+
+.heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+h1 {
+    margin-bottom: 2rem;
+    padding-right: 1rem;
+}
+
+.lb {
+    font-size: 13px;
+    color: black;
+    font-weight: 900;
+    margin-left: -9.5rem;
+    margin-top: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.hst {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 2rem;
+}
+
+.inp {
+    width: 12rem;
+    padding-left: 0.5rem;
+    transition: box-shadow 0.9s ease; /* Optional: Add transition for the glow effect */
+}
+
+.go {
+    height: 1.5rem;
+    margin-left: 15px;
+    margin-top: 5px;
+    padding: 0 10px;
+    background-color: orange;
+    color: white;
+    border: 2px solid #ffff;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.go:hover {
+    background-color: #45a049;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.n {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 1.5rem;
+    width: 18rem;
+    padding-left: 5px;
+    margin-bottom: 0.5px;
+    margin-left: 2.5rem;
+}
+
+.d {
+    margin-left: 0.5rem;
+}
+
+.route {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2.5rem;
+    width: 15rem;
+    margin-right: 1rem;
+}
+
+.btn {
+    margin-right: 2rem;
+    margin-left: auto;
+    cursor: pointer; /* Show pointer cursor on hover */
+    /* //padding: 5px 10px; */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    height: 1.5rem;
+    width: -1rem;
+
+}
+
+.btn:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.btnRT {
+    margin-right: 2rem;
+    margin-left: auto;
+    cursor: pointer; /* Show pointer cursor on hover */
+    /* //padding: 5px 10px; */
+    background-color: #4CAF50; /* Green background */
+    color: white;
+    border: 1px solid grey;
+    border-radius: 5px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover */
+    height: 1.5rem;
+    width: -1rem;
+
+}
+
+.btnRT:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+/* Modal background blur effect */
+.modal-overlay1, .modal-overlay2 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+    backdrop-filter: blur(4px); /* Blur effect for background */
+    opacity: 0;
+    pointer-events: none; /* Initially not interactive */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    overflow: hidden;
+}
+
+/* Show modal */
+.modal-overlay1.active, .modal-overlay2.active{
+    opacity: 1;
+    pointer-events: auto; /* Make interactive */
+    
+}
+
+/* Modal content styles */
+.modal-content1, .modal-content2 {
+    background-color: #b66262;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 500px;
+    z-index: 20; 
+    overflow: hidden;
+}
+
+.modal-content1, .modal-content2, h3, h5 {
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+}
+
+.modal-content1, .modal-content2, input {
+    width: 80%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#confirmBtn1, #confirmBtn2 {
+    padding: 8px 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.modal-content1 .modal-content2 button:hover {
+    background-color: #b5feb9;
+}
+
+.modal-overlay3 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    box-sizing: border-box;
+    align-items: center;
+    z-index: 10;
+    backdrop-filter: blur(4px); /* Blur effect for background */
+    opacity: 0;
+    pointer-events: none; /* Initially not interactive */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    
+}
+
+.modal-overlay3.active {
+    opacity: 1;
+    pointer-events: auto; /* Make interactive */
+}
+
+.modal-content3 {
+    background: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%; /* Make it full-width within the overlay */
+    max-width: 600px; /* Limit the maximum width */
+    max-height: 80%;
+    overflow: hidden; /* Ensure no overflow outside the modal */
+    box-sizing: border-box; /* Include padding in width/height */
+    border: 2px solid #fff;
+}
+
+/* Styling for the displayReqs section */
+.displayReqs {
+    max-height: 300px; /* Adjust as needed to fit your design */
+    overflow-y: auto; /* Enable vertical scrolling if content overflows */
+    padding-right: 15px; /* To avoid content hiding behind scrollbar */
+}
+
+/* Flex container for text and buttons */
+.flex-container {
+    display: flex;
+    justify-content: space-between; /* Space between text and buttons */
+    align-items: center; /* Align items vertically center */
+    margin: 10px 0; /* Space between items */
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+/* Paragraph styling */
+p {
+    margin: 0; /* Remove default margin */
+    flex-grow: 1; /* Allow text to take up remaining space */
+    padding-right: 10px; /* Space between text and buttons */
+    min-width: 200px; /* Prevent text from becoming too narrow */
+    color: white;
+    font-size: 11px;
+    word-break: break-word; /* Ensure long words wrap */
+}
+
+#accept {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: greenyellow;
+    color: black;
+    cursor: pointer;
+    margin-left: 5px; /* Space between buttons */
+    margin-top: 5px; /* Space above buttons for wrapping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    transition: background-color 0.3s ease;
+}
+
+#accept:hover {
+    background-color: #45a049;
+}
+
+#reject {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: red;
+    color: white;
+    margin-left: 5px; /* Space between buttons */
+    margin-top: 5px; /* Space above buttons for wrapping */
+    flex-shrink: 0; /* Prevent buttons from shrinking */
+    transition: background-color 0.3s ease;
+}
+#reject:hover{
+    background-color: #f87a5b;
+
+}
+
+@media (max-width: 600px) {
+    .modal-content3 {
+        max-width: 100%; /* Full width on small screens */
+        max-height: 90%; /* Increase height for smaller screens */
+        padding: 15px; /* Reduce padding for small screens */
+    }
+
+    .flex-container {
+        flex-direction: column; /* Stack items vertically */
+        align-items: flex-start; /* Align items to the start */
+    }
+
+    p {
+        padding-right: 0; /* Remove padding when stacked */
+        margin-bottom: 10px; /* Space below paragraph */
+    }
+
+    button {
+        margin-top: 0; /* Remove top margin when stacked */
+    }
+}
+
+.req {
+    margin-top: 2rem;
+}
+
+.reqbtn {
+    background-color: blue;
+    color: white;
+    border-radius: 8px;
+    padding: 7px;
+}
+
+.invalid-code {
+    text-align: center;
+    color: red;
+    margin-top: 20px;
+}
+
+.invalid-code h2 {
+    font-size: 1.5rem;
+}
+
+.invalid-code p {
+    font-size: 1rem;
+}
+
+/* Dark mode styles */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode .lb,
+.dark-mode .d,
+.dark-mode .btn {
+    color: #e0e0e0;
+}
+
+.dark-mode .go {
+    background-color: #333;
+}
+
+.dark-mode .go:hover {
+    background-color: #555;
+}
+
+/* Mode button positioning */
+.modebtn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#togglebtn {
+    all: unset;
+    cursor: pointer;
+    margin-top: 2rem;
+
+}
+
+/* Light/Dark mode icon positioning */
+#light-icon {
+    display: none;
+}
+
+/* Add glow effect to the input field */
+.inp:focus {
+    outline: none;
+    border: 2px solid transparent;
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.9); /* Increased glow intensity */
+}
+
+/* Add the dark mode styles if needed */
+.dark-mode .inp:focus {
+    box-shadow: 0 0 15px 5px rgba(0, 255, 0, 0.9); /* Increased glow intensity */
+}
+
+
+.heading{
+    margin-bottom: 0.5rem;
+}
+
+.hst{
+    margin-bottom: 1.5rem;
+}
+
+.inp{
+    border-radius: 2.5rem;
+    padding-left: 1rem;
+}
+
+#rt{
+    color: yellow;
+}
+
+.btncont{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+   /* // border: 4px solid red; */
+    margin-top: 1.5rem;
+    width: 16rem;
+    margin-left: auto;
+    margin-right: auto;
+    
+
+}
+
+.border {
+    border: 3px solid #fff;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    border-radius: 1rem;
+}
